@@ -2,3 +2,8 @@
 node_modules/
 .vscode/
 .claude/
+
+# Raw/unused photo & video dumps, not referenced by the site (except about.JPG, tracked separately)
+assets/Misc. Bread pictures for web gallery/
+assets/Misc. Cake Pictures for web gallery/
+assets/Misc. Cookie and Pastry Pictures for web gallery/

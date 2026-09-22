@@ -15,6 +15,10 @@ function makeBakeCard(bake) {
   photo.alt = bake.alt;
   photo.loading = 'lazy';
   photo.className = 'product-photo';
+  if (!bake.name) {
+    card.append(photo);
+    return card;
+  }
   const info = document.createElement('div');
   info.className = 'product-info';
   const title = document.createElement('h3');
@@ -35,13 +39,21 @@ function showBakeCategory(bakeryBakes) {
   const requested = window.location.hash.slice(1);
   const category = Object.hasOwn(bakeCategories, requested) ? requested : 'cakes';
   const bakes = bakeryBakes.filter(bake => bake.category === category);
-  productGrid.replaceChildren(...bakes.map(makeBakeCard));
+  productGrid.replaceChildren(...bakes.filter(bake => !bake.customOrder).map(makeBakeCard));
+  const customCookie = bakes.find(bake => bake.customOrder);
+  document.getElementById('custom-cookie-feature').hidden = !customCookie;
+  if (customCookie) {
+    const customPhoto = document.getElementById('custom-cookie-image');
+    customPhoto.src = `assets/${customCookie.image}`;
+    customPhoto.alt = customCookie.alt;
+  }
   document.getElementById('collection-heading').textContent = bakeCategories[category];
   document.getElementById('collection-count').textContent = `${bakes.length} ${bakes.length === 1 ? 'bake' : 'bakes'} to explore`;
   document.getElementById('collection-empty').hidden = bakes.length > 0;
   document.getElementById('cake-info').hidden = category !== 'cakes';
   document.getElementById('pastry-info').hidden = category !== 'pastries';
   document.getElementById('cookie-info').hidden = category !== 'cookies';
+  document.getElementById('bread-info').hidden = category !== 'bread';
   document.querySelectorAll('[data-category]').forEach(link => {
     if (link.dataset.category === category) link.setAttribute('aria-current', 'true');
     else link.removeAttribute('aria-current');
@@ -59,7 +71,7 @@ if (inquiryPreview) {
   const bake = window.bakeryBakes.find(item => item.id === bakeId);
   if (bake) {
     inquiryPreview.hidden = false;
-    document.getElementById('inquiry-name').textContent = bake.name;
+    document.getElementById('inquiry-name').textContent = bake.name || 'Bread';
     const photo = document.getElementById('inquiry-image');
     photo.src = `assets/${bake.image}`;
     photo.alt = bake.alt;
