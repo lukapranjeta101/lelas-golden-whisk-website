@@ -9,7 +9,7 @@ const mobileScreen = window.matchMedia('(max-width: 700px)');
 function setMenuOpen(open) {
   menuButton.setAttribute('aria-expanded', String(open));
   navigation.hidden = mobileScreen.matches && !open;
-  menuButton.textContent = open ? 'Close' : 'Menu';
+  menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
 }
 
 menuButton.hidden = false;
