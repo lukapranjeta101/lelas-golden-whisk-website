@@ -23,7 +23,7 @@ window.bakeryBakes = [
   { id: "cookies-almond-nest-cookies", name: "Almond Nest Cookies", croatianName: "Badem Gnjezda", image: "cookies folder/Almond Nest cookies.png", alt: "Almond Nest Cookies", category: "cookies" },
   { id: "cookies-fererro-wafers", name: "Fererro Wafers", croatianName: "Ferero Oblatne", image: "cookies folder/Fererro wafers.png", alt: "Fererro Wafers", category: "cookies" },
   { id: "cookies-rafaelo-cookie", name: "Rafaelo Cookie", croatianName: "Rafaello Kuglice", image: "cookies folder/Rafaelo cookie.png", alt: "Rafaelo Cookie", category: "cookies" },
-  { id: "cookies-decorated-cookies", name: "Sugar Cookies with Royal Icing", image: "cookies folder/Screenshot 2026-09-21 at 6.26.08 PM.png", alt: "Sugar Cookies with Royal Icing", category: "cookies", customOrder: true },
+  { id: "cookies-decorated-cookies", name: "Sugar Cookies with Royal Icing", image: "cookies folder/Screenshot 2026-09-21 at 6.26.08 PM.png", alt: "Sugar Cookies with Royal Icing", category: "sugar-cookies", customOrder: true },
   { id: "cookies-vanilla-bean-cookies", name: "Vanilla Bean Cookies", croatianName: "Vanilice", image: "cookies folder/Vanilla Bean Cookies.png", alt: "Vanilla Bean Cookies", category: "cookies" },
   { id: "cookies-walnut-cookie", name: "Walnut Cookie", croatianName: "Kiflice s Orasima", image: "cookies folder/Walnut cookie.png", alt: "Walnut Cookie", category: "cookies" },
   { id: "cookies-bajadera", name: "Bajadera", image: "cookies folder/bajadera.png", alt: "Bajadera", category: "cookies" },

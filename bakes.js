@@ -1,6 +1,7 @@
 const bakeCategories = {
   cakes: 'Cakes for your sweet moments.',
   cookies: 'Cookies, made for sharing.',
+  'sugar-cookies': 'Sugar cookies made just for you.',
   pastries: 'A little pastry perfection.',
   bread: 'A place for bread at the table.',
 };
@@ -39,7 +40,8 @@ function showBakeCategory(bakeryBakes) {
   const requested = window.location.hash.slice(1);
   const category = Object.hasOwn(bakeCategories, requested) ? requested : 'cakes';
   const bakes = bakeryBakes.filter(bake => bake.category === category);
-  productGrid.replaceChildren(...bakes.filter(bake => !bake.customOrder).map(makeBakeCard));
+  const gridBakes = bakes.filter(bake => !bake.customOrder);
+  productGrid.replaceChildren(...gridBakes.map(makeBakeCard));
   const customCookie = bakes.find(bake => bake.customOrder);
   document.getElementById('custom-cookie-feature').hidden = !customCookie;
   if (customCookie) {
@@ -48,7 +50,9 @@ function showBakeCategory(bakeryBakes) {
     customPhoto.alt = customCookie.alt;
   }
   document.getElementById('collection-heading').textContent = bakeCategories[category];
-  document.getElementById('collection-count').textContent = `${bakes.length} ${bakes.length === 1 ? 'bake' : 'bakes'} to explore`;
+  document.getElementById('collection-count').textContent = gridBakes.length
+    ? `${gridBakes.length} ${gridBakes.length === 1 ? 'bake' : 'bakes'} to explore`
+    : '';
   document.getElementById('collection-empty').hidden = bakes.length > 0;
   document.getElementById('cake-info').hidden = category !== 'cakes';
   document.getElementById('pastry-info').hidden = category !== 'pastries';
