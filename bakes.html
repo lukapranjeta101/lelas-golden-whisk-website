@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore cookies, cakes, pastries, and bread from Lela’s Golden Whisk in Lakewood, Ohio. Contact Lela to discuss your order." />
+    <title>Our Menu | Lela’s Golden Whisk</title>
+    <link rel="icon" type="image/png" href="assets/lelas-golden-whisk-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <script src="bakes-data.js" defer></script>
+    <script src="bakes.js" defer></script>
+  </head>
+  <body class="bakes-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="bakes.html" aria-current="page">Our menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="bakery-window" aria-labelledby="shop-heading">
+        <div class="bakery-awning" aria-hidden="true"></div>
+        <div class="shop-intro section">
+          <img class="shop-cutout shop-cutout-left" src="assets/cutouts/cookies.png" alt="" width="1239" height="1269" />
+          <div class="shop-intro-copy">
+            <p class="eyebrow">Lela’s Golden Whisk · Lakewood, Ohio</p>
+            <h1 id="shop-heading">Our <em>bakes.</em></h1>
+          </div>
+          <img class="shop-cutout shop-cutout-right" src="assets/cutouts/pastries.png" alt="" width="1485" height="1059" />
+        </div>
+      </section>
+
+      <section class="section bake-collection" aria-labelledby="collection-heading">
+        <nav class="category-nav" aria-label="Browse bake categories">
+          <a id="cakes" href="#cakes" data-category="cakes" aria-current="true">Cakes</a>
+          <a id="cookies" href="#cookies" data-category="cookies">Cookies</a>
+          <a id="pastries" href="#pastries" data-category="pastries">Pastries</a>
+          <a id="bread" href="#bread" data-category="bread">Bread</a>
+        </nav>
+        <div class="collection-heading">
+          <div><p class="eyebrow">A peek inside our kitchen</p><h2 id="collection-heading">The whole sweet collection.</h2></div>
+          <p id="collection-count" role="status" aria-live="polite"></p>
+        </div>
+        <div class="category-info" id="cake-info" hidden>
+          <p>Because every cake is unique, <strong>final pricing depends on the complexity of your design.</strong></p>
+          <p><strong>Cake toppers are not included</strong>, but you’re welcome to provide your own — or we can add one for an additional charge.</p>
+          <p>To receive an estimate for your custom cake, please share <strong>as many details as possible</strong> in your request, along with any inspiration photos you have.</p>
+          <p>Delivery is <strong>available upon request</strong> for an extra fee.</p>
+        </div>
+        <div class="category-info" id="pastry-info" hidden>
+          <p>Whether you’re hosting a party, family gathering, or simply craving something sweet, our pastry trays bring a little joy to every occasion.</p>
+          <p>Small Tray (50 pieces) — <strong>$90</strong><br />Medium Tray (60 pieces) — <strong>$105</strong><br />Large Tray (90 pieces) — <strong>$155</strong></p>
+          <p>Each tray includes your choice of <strong>up to 5 pastries</strong> from the selections below.</p>
+          <p><strong>Please note:</strong> Princess Krafne are priced separately at <strong>$3 per piece</strong> and are not included in the tray selections.</p>
+          <p>Russian Hats are $2.50 per piece when ordered separately, but <strong>can be mixed into any tray at the regular tray pricing.</strong></p>
+        </div>
+        <div class="category-info" id="cookie-info" hidden>
+          <p>Our assorted cookie trays feature a delicious variety of homemade cookies, perfect for any occasion.</p>
+          <p>Small Tray (~50 pieces) — <strong>$60</strong><br />Large Tray (~100 pieces) — <strong>$100</strong></p>
+          <p>Breskve (peach cookies) may be mixed into your tray or ordered separately by the dozen for <strong>$25 per dozen</strong>.</p>
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+        <div class="collection-empty" id="collection-empty" hidden>
+          <span class="empty-flourish" aria-hidden="true">✧</span>
+          <h3 id="empty-heading">More sweetness is on the way.</h3>
+          <p>Photos and pricing for this collection are coming soon. Get in touch to ask about your occasion.</p>
+          <a class="button shop-button" href="contact.html">Contact Lela</a>
+          <a class="text-link" href="#cakes">Browse cakes</a>
+        </div>
+        <noscript><p>Enable JavaScript to browse the photo collection. You can also <a class="text-link" href="contact.html">contact Lela about the bakes</a>.</p></noscript>
+        <p class="collection-note">Our collection is growing. More details and prices are on the way.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="logo" href="index.html" aria-label="Lela’s Golden Whisk home"><img src="assets/lelas-golden-whisk-logo.png" alt="Lela’s Golden Whisk — Taste From Europe in Every Crumb" width="3000" height="3000" loading="lazy" /></a>
+          <p class="footer-tagline">Taste from Europe in every crumb.</p>
+        </div>
+        <div class="footer-contact">
+          <p class="eyebrow">Get in touch</p>
+          <a href="mailto:lelasgoldenwhisk@gmail.com">lelasgoldenwhisk@gmail.com</a>
+          <a href="tel:+12166196275">(216) 619-6275</a>
+        </div>
+        <div class="footer-social">
+          <p class="eyebrow">Follow along</p>
+          <div class="social-links">
+            <a class="social-link" href="https://www.instagram.com/lelasgoldenwhisk/" target="_blank" rel="noopener noreferrer" aria-label="Lela’s Golden Whisk on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a class="social-link" href="https://www.facebook.com/index.php?next=https%3A%2F%2Fwww.facebook.com%2Fthe.golden.whisk.bakery.2025%2Falbums%2F122112349076723955%2F&amp;deoia=1&amp;no_universal_links=1" target="_blank" rel="noopener noreferrer" aria-label="Lela’s Golden Whisk on Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Lela’s Golden Whisk.</p>
+        <p class="footer-license">Licensed &amp; approved by the Health Department.</p>
+      </div>
+    </footer>
+  </body>
+</html>
